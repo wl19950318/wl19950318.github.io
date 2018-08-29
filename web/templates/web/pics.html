@@ -1,0 +1,57 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="center-box">
+    <div class="find-box">
+        <div class="find-top-block">
+            <div class="find-top">
+                <p>Traveller</p>
+            </div>
+            <div class="top-content">
+                <div class="content-info">
+                    <span style="font-size:18px">A good companion can shorten the journey time。.
+                    </span>
+                </div>
+                <div class="content-btn">
+                    <a href="/located"><div class="content-btn-href">Locate</div></a>
+                    <a href="/post_pic"><div class="content-btn-href">POST</div></a>
+                </div>
+            </div>
+            <div  class="top-bottom">
+                <div class="bottom-label">
+                    <a href="/picType/1"><div class="bottom-label-span">Musician</div></a>
+                </div>
+                <div class="bottom-label">
+                    <a href="/picType/2"><div class="bottom-label-span">Food lover</div></a>
+                </div>
+                <div class="bottom-label">
+                    <a href="/picType/3"><div class="bottom-label-span">Photographer</div></a>
+                </div>
+                <div class="bottom-label">
+                    <a href="/picType/4"><div class="bottom-label-span">Sports</div></a>
+                </div>
+                <div class="btn-tip">
+                    <span></span>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        <div class="find-content-block">
+             {% for pic in tbictures %}
+                <div class="block-content">
+                    <h3>{{ pic.title }}</h3>
+                    <hr>
+                    <div class="block-detail">
+                        {{ pic.userId.email }}({{ pic.userId.lanague }}<br>)<br>
+                        {{ pic.remark }}
+                    </div>
+                    <div class="block-detail-img">
+                        <img src="{{ pic.picUrl }}" alt="">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{%endblock content%}

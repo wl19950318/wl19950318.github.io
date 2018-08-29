@@ -1,0 +1,51 @@
+{%extends 'base.html'%}
+
+{%block content%}
+ <div class="center-box">
+    <div class="find-box">
+        <div class="find-top-block">
+            <div class="find-top">
+                <p>Discover</p>
+            </div>
+            <div class="top-content discover-title-content">
+                <div class="content-info">
+                    <span style="font-size:20px">If you don't walk out， you will think that this is the world.
+                    </span>
+                </div>
+            </div>
+            <div  class="top-bottom">
+                <div class="bottom-label">
+                    <a href="/discoverType/1"><div class="bottom-label-span">Food</div></a>
+                </div>
+                <div class="bottom-label">
+                    <a href="/discoverType/2"><div class="bottom-label-span">Destination</div></a>
+                </div>
+                <div class="bottom-label">
+                    <a href="/discoverType/3"><div class="bottom-label-span">Hotel</div></a>
+                </div>
+                <div class="bottom-label">
+                    <a href="/discoverType/4"><div class="bottom-label-span">Summer</div></a>
+                </div>
+                <div class="btn-tip">
+                    <span></span>
+                    <br>
+                    <br>
+                    <br>
+                    <br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="discover-block">
+            <div class="discover-block-box">
+                {% for pic in tbictures %}
+                    <div class="discover-block-img">
+                        <img src="{{ pic.picUrl }}" />
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+{%endblock content%}
